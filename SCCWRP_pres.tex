@@ -96,15 +96,17 @@
 
 % macros
 \newcommand{\emtxt}[1]{\textbf{\textit{#1}}}
+\newcommand{\ShowSexpr}[1]{\texttt{{\char`\\}Sexpr\{#1\}}}
+\newcommand{\Bigtxt}[1]{\textbf{\textit{#1}}}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-\title[Evaluating water quality]{\textbf{Quantitative approaches to evaluate surface water quality: Examples from Minnesota Lakes to Florida Estuaries}}
-\author[M. Beck]{Marcus W. Beck}
+\title[Evaluating water quality]{\textbf{Quantitative approaches for biological assessment: Examples from Minnesota Lakes to Florida Estuaries}}
+\author[M. Beck]{Marcus W. Beck, Ph.D.}
 
-\institute[USEPA]{ORISE post-doc, USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
+\institute[USEPA]{USEPA National Health and Environmental Effects Research Laboratory, Gulf Ecology Division, \href{mailto:beck.marcus@epa.gov}{beck.marcus@epa.gov}, Phone: 8509342480}
 
-\date{Sep. 22, 2015}
+\date{May 22, 2017}
 
 \titlegraphic{\includegraphics[width=0.95\linewidth]{fig/title_plo.pdf}}
 
@@ -147,39 +149,14 @@ Monitoring provides information for decision-making based on apparent trends...
 
 %%%%%%
 \begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
-Most of my research career has focused on using monitoring data to understand effects of eutrophication in one form or another \\~\\
 \onslide<+->
-\begin{quote}
-Eutrophication (noun) - an \emtxt{increase} in the rate of supply of \emtxt{organic matter} to an ecosystem\\
-\hfill -- \cite{Nixon95}
-\end{quote}
-\begin{center}
-\scalebox{1}{
-\begin{tikzpicture}[node distance = 4cm, auto, >=stealth]
-  \onslide<+->{
-  \node[block] (a) {Nutrient Loading};}
-  \onslide<+->{
-	\node[decision] (b)  [right of=a] {Responses};
- 	\draw[->] (a) -- (b);}
-  \onslide<+->{
-  \draw[decorate,decoration={brace,amplitude=10pt}] [right of=b] (2,-1.5) -- (2,1.5);
-  \node[draw,align=left,draw=none] [right of=b] {\textbf{Changes in:}\\ Chlorophyll\\ Primary Production\\ System Metabolism\\ Dissolved Oxygen};}
-\end{tikzpicture}}
-\end{center}
-\vspace{-0.5cm}\hspace*{15pt}\scalebox{0.7}{\hbox{\tiny Adapted from \cite{Cloern01}}}\\~\\
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Assessing environmental condition}}{\textbf{How do we collect and use data?}}
-\onslide<+->
-Today's talk: My experience synthesizing and evaluating monitoring data to inform our understanding of the eutrophication paradigm\\~\\
+Today's talk: My experience using monitoring data to understand causes and dynamics of water quality change\\~\\
 \begin{itemize}
-\item \emtxt{Case 1}: Understanding response of a biotic index for Minnesota lakes \\~\\
-\item \emtxt{Case 2}: Evaluating long-term datasets of chlorophyll in Tampa Bay \\~\\
-\item \emtxt{Case 3}: Development of `open-science' tools for the National Estuarine Research Reserve System \\~\\
+\item \emtxt{Case 1}: Developing and quantifying response of a biotic index for Minnesota lakes \\~\\
+\item \emtxt{Case 2}: Describing historical changes in eutrophication from long-term datasets in Tampa Bay \\~\\
 \end{itemize}
 \onslide<+->
-Each case addresses the challenges of \emtxt{understanding nutrient dynamics} and \emtxt{developing quantitative tools} for assessment
+Each case addresses the challenges of \emtxt{evaluating change} with biological endpoints and \emtxt{developing quantitative tools} to improve efficiency and understanding
 \end{frame}
 
 \section{Case 1: Minnesota lakes}
@@ -193,15 +170,10 @@ Each case addresses the challenges of \emtxt{understanding nutrient dynamics} an
 \begin{column}{0.5\textwidth}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{fig/mn_seal.jpg} \\~\\
-\includegraphics[width=0.9\textwidth]{fig/mn_lake.jpg}
+\includegraphics[width=0.8\textwidth]{fig/mn_lake.jpg}
 \end{center}
 \end{column}
 \end{columns}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
-\centerline{\includegraphics[width=0.9\textwidth]{fig/stressors.pdf}}
 \end{frame}
 
 %%%%%%
@@ -224,9 +196,9 @@ Index of biotic integrity (IBI) \cite{Karr81,Karr86}
 %%%%%%
 \begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
 \onslide<+->
-The macrophyte IBI can be used to evaluate relative lake condition by monitoring and evaluating aquatic plant metrics \cite{Beck10} \\~\\
+The macrophyte IBI can be used to evaluate relative lake condition by monitoring and evaluating aquatic plant metrics \cite{Beck10,Beck13} \\~\\
 \onslide<+->
-Composed of eight metrics, summed to get one IBI score per lake \\~\\
+Includes eight metrics, summed to get one IBI score per lake \\~\\
 \begin{itemize}
 \item{MAXD: Maximum depth of plant growth}
 \item{LITT: Percentage of littoral zone vegetated}
@@ -326,12 +298,12 @@ How many different combinations of metrics lead to the same score?
 %%%%%%
 \begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
 \begin{itemize}
-\item Dataset of 332 vegetation surveys, courtesy of MNDNR
+\item Dataset of 332 vegetation surveys, courtesy of MNDNR \cite{Beck14a}
 \item Numerous covariates describing lake characteristics and anthropogenic stressors
 \end{itemize}
 \begin{columns}
 \begin{column}{0.5\textwidth}
-\centerline{\includegraphics[width=\textwidth]{fig/Beck_GEDsem-ibi_data.pdf}}
+\centerline{\includegraphics[width=0.9\textwidth]{fig/Beck_GEDsem-ibi_data.pdf}}
 \end{column}
 \begin{column}{0.5\textwidth}
 \scriptsize
@@ -376,14 +348,7 @@ Neural networks to model IBI response\\~\\
 
 %%%%%%
 \begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
-\begin{center}
-\animategraphics[controls,width=0.85\linewidth]{12}{fig/train_iter}{}{}
-\end{center}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 1: Minnesota lakes}}{\textbf{Evaluating biological response}}
-Modification of Garson's algorithm to determine relative importance of variables \cite{Garson91}
+Modification of Garson's algorithm to determine relative importance of variables [Beck, in press]
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{center}
@@ -467,7 +432,7 @@ Potentially competing objectives of an IBI: certainty vs simplicity \\~\\
 IBI relies on multiparameters, a requirement when the system to be evaluated is complex. \cite{Karr86} \\~\\
 \end{quote}
 \begin{quote}
-The resulting index allows people without specialized expertise to understand overall condition and to make informed decisions that will then affect the health of those resources. \cite{Karr99} \\~\\
+The resulting index allows people without specialized expertise to describe overall condition and to make informed decisions that will affect the health of those resources. \cite{Karr99} \\~\\
 \end{quote}
 \pause
 \begin{quote}
@@ -476,7 +441,7 @@ Combining responses into an index hides the component responses, thereby obscuri
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 USEPA Gulf Ecology Division - guidance to Florida DEP and others on criteria development for estuaries \\~\\
 \centerline{\includegraphics[width = 0.8\textwidth]{fig/sabine.pdf}}
 \end{frame}
@@ -487,7 +452,7 @@ USEPA Gulf Ecology Division - guidance to Florida DEP and others on criteria dev
 
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{itemize}
@@ -504,7 +469,7 @@ USEPA Gulf Ecology Division - guidance to Florida DEP and others on criteria dev
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 \begin{figure}[!ht]
 
 {\centering \includegraphics[width=\linewidth]{fig/annual_chl-1} 
@@ -520,7 +485,7 @@ USEPA Gulf Ecology Division - guidance to Florida DEP and others on criteria dev
 % variation in chl by year, season, and management
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 What affects our interpretation of chlorophyll response to nutrients?
 \vspace{-0.1in}
 \captionsetup[subfloat]{captionskip=0pt, position=top}
@@ -547,10 +512,10 @@ What affects our interpretation of chlorophyll response to nutrients?
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 \onslide<+->
 \begin{block}{Study objective}
-Adapt and apply nutrient response model for estuaries that leverages the descriptive capabilities of large datasets \scriptsize \cite{Beck15}
+Adapt and apply a nutrient response model for estuaries that leverages the descriptive capabilities of large datasets \scriptsize \cite{Beck15}
 \end{block}
 \vspace{0.2in}
 \onslide<+->
@@ -565,22 +530,54 @@ Questions of concern -- Can we...
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 \onslide<+->
-The \emtxt{weighted regression (WRTDS)} model is being developed by USGS for pollutant modelling in rivers \cite{Hirsch10}\\~\\
-Based on the idea that pollution concentration is a function of \emtxt{time}, \emtxt{discharge}, and \emtxt{season}\\~\\
+\textbf{W}eighted \textbf{R}egression on \textbf{T}ime, \textbf{D}ischarge, and \textbf{S}eason \\~\\
+\begin{itemize}
+\item Describes a time series in the context of these parameters, locally fitted \\~\\
+\item Useful to describe long-term trends, ie., multi-decadal time series \\~\\
+\item Evaluation of flow-normalized trends, hypothesis generation
+\end{itemize}
 \onslide<+->
-\emtxt{Problem:} We want to see if management has an effect on reducing pollutant load over time, but load varies with time/discharge.\\~\\
-\onslide<+->
-\emtxt{Solution:} Develop a model that accounts for changes in relationships between drivers of pollution over time.\\~\\
-\onslide<+->
-\emtxt{Adaptation:} Can this approach be used to evaluate chlorophyll trends in Tampa Bay?
+\vspace{0.1in}
+Developed by \cite{Hirsch10} for pollutants in stream/rivers\\~\\
+Adapted for tidal waters by \cite{Beck15}
 \end{frame}
 
 
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}[t]{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
+\onslide<1->
+How does it work?  
+\begin{center}
+$\ln\left(N\right) = \beta_0 + \beta_1 t + \beta_2 Sal + \beta_3 \sin\left(2\pi t\right) + \beta_4 \cos\left(2\pi t\right)$\\~\\
+$N$: nitrogen (or other response endpoint)\\
+$t$: time\\
+$Sal$: Salinity (or other flow-related variable)
+\end{center}
+\includegraphics<2>[width = \textwidth, page = 1]{fig/wrtds_pieces.pdf}
+\includegraphics<3>[width = \textwidth, page = 2]{fig/wrtds_pieces.pdf}
+\includegraphics<4>[width = \textwidth, page = 3]{fig/wrtds_pieces.pdf}
+\includegraphics<5>[width = \textwidth, page = 4]{fig/wrtds_pieces.pdf}
+\includegraphics<6>[width = \textwidth, page = 5]{fig/wrtds_pieces.pdf}
+\end{frame}
+
+%%%%%%
+\begin{frame}[t]{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
+This is not the whole story...
+\begin{center}
+$\ln\left(N\right) = \beta_0 + \beta_1 t + \beta_2 Sal + \beta_3 \sin\left(2\pi t\right) + \beta_4 \cos\left(2\pi t\right)$
+\end{center}
+One parameter set to many parameter sets - a moving window regression \\~\\
+Within each window, a unique regression is fit, weighted by the local salinity, time, and season \\~\\
+Similar to a loess/spline smooth but specific to the effects of these three variables on the response
+\end{frame}
+
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 How does weighted regression work?
 \begin{center}
 \animategraphics[controls,width=\linewidth]{12}{fig/wtex}{}{} %frame rate is 12 per/sec
@@ -588,7 +585,30 @@ How does weighted regression work?
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
+{\small
+\Bigtxt{Points}: observed time series (black are weighted, grey is zero weight)\\
+\Bigtxt{Green point}: observation at the center of the regression\\
+\Bigtxt{Blue line}: Global model with weights specific to the window\\
+\Bigtxt{Red line}: Accumulated WRTDS model
+}
+\begin{center}
+\animategraphics[controls,width=\linewidth]{10}{fig/wrtds_pieces2}{}{} %frame rate is 12 per/sec
+\end{center}
+\end{frame}
+
+
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
+\centerline{RMSE fit for unweighted = 0.58, WRTDS = 0.36}
+\begin{center}
+\includegraphics[width = \textwidth]{fig/wrtds_perf.pdf}
+\end{center}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 This gives us improved predictions of chlorophyll dynamics...
 \begin{figure}[!ht]
 
@@ -603,7 +623,7 @@ This gives us improved predictions of chlorophyll dynamics...
 \end{frame}
 
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term water quality datasets}}
 Because the model is dynamic, we have parameters describing the relationship of chlorophyll with other factors specific to different time periods \\~\\
 \begin{columns}[T]
 \begin{column}{0.45\textwidth}
@@ -626,12 +646,57 @@ Because the model is dynamic, we have parameters describing the relationship of 
 \end{columns}
 \end{frame}
 
+% patux trends
+
+
 %%%%%%
-\begin{frame}{\textbf{Case 2: Florida estuaries}}{\textbf{Evaluating long-term chlorophyll datasets}}
+\begin{frame}{\textbf{Application to other systems}}{\textbf{Evaluating long-term water quality datasets}}
+Comparing models for trend evaluation \cite{Beck17}
+\begin{columns}
+\begin{column}{0.38\textwidth}
+\includegraphics[width = \textwidth]{fig/patux_map.pdf}
+\end{column}
+\begin{column}{0.65\textwidth}
+\includegraphics[width = \textwidth]{fig/predann.pdf}
+\end{column}
+\end{columns}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Application to other systems}}{\textbf{Nitrogen dynamics in the Delta - DIN}} 
+\centerline{\includegraphics[width = 0.93\textwidth, page = 2]{fig/trndsperdin.pdf}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Application to other systems}}{\textbf{Nitrogen dynamics in the Delta - ammonium}} 
+\centerline{\includegraphics[width = 0.93\textwidth, page = 2]{fig/trndspernh.pdf}}
+\end{frame}
+
+%%%%%%
+\begin{frame}{\textbf{Application to other systems}}{\textbf{Nitrogen dynamics in the Delta - nitrite/nitate}} 
+\centerline{\includegraphics[width = 0.93\textwidth, page = 2]{fig/trndsperno23.pdf}}
+\end{frame}
+
+
+
+%%%%%%
+\begin{frame}[t]{\textbf{Conclusions}}
 \onslide<+->
 What does this mean for Tampa Bay and elsewhere?\\~\\
+\vspace{-0.2in}
 \begin{itemize}
-\item Predictions followed observed chlorophyll -- but increased clarity in the description
+\item Better description of biological endpoints can change conclusions
+\end{itemize}
+\onslide<+->
+\centerline{\includegraphics[width = \textwidth]{fig/trndcomp1.pdf}}
+\end{frame}
+
+%%%%%%
+\begin{frame}[t]{\textbf{Conclusions}}
+\onslide<+->
+What does this mean for Tampa Bay and elsewhere?\\~\\
+\vspace{-0.2in}
+\begin{itemize}
 \item More detailed evaluation of trends allows greater insight into drivers of change\\~\\
 \end{itemize}
 \onslide<+->
@@ -639,127 +704,15 @@ The model parameters show us a picture...
 \centerline{\includegraphics[width = \textwidth]{fig/title_plo.pdf}}
 \end{frame}
 
-\section{Case 3: Open-source tools}
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\onslide<+->
-Progress in science is incremental and builds on past work\\~\\
-This requires accurate reproduction of methods\\~\\
-The ability to reproduce methods will always be a challenge...\\~\\
-\onslide<+->
-...digital tools have proliferated to \emtxt{facilitate sharing}\\~\\
-\begin{columns}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
-\end{column}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/RStudio.png}}
-\end{column}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/knit-logo.png}}
-\end{column}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/octocat.png}}
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-The NERRS System-Wide Monitoring Program...\\~\\
-\centerline{\includegraphics[width = 0.8\textwidth]{fig/NERRS_locations.png}}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\onslide<+->
-The SWMP database and others like it represent incredible opportunities to further our knowledge of natural systems...\\~\\
-...including the effects of eutrophication \\~\\
-\onslide<+->
-\emtxt{Problem:} These data are numerous and not easily compared\\~\\
-\emtxt{Solution:} Develop open-source tools that address the challenges of large-scale comparative analyses with continuous monitoring data\\~\\
-\onslide<+->
-The benefits include:
-\begin{itemize}
-\item Free for use by anyone
-\item Free to collaborate
-\item Facilitation of analysis with `under-the-hood' functionality
-\end{itemize}
-\end{frame}
-
-%%%%%%
-\begin{frame}[t]{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-Each reserve has fixed, continuous monitoring stations for \emtxt{water quality} (15 min), \emtxt{meteorology} (15 min), and \emtxt{nutrients} (monthly)\\~\\
-As of this month, $>$ 60 million records available online\\~\\
-Raw data look like this:\\~\\
-\centerline{\includegraphics[width = 0.9\textwidth]{fig/qaqc_ex.png}}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\centerline{\includegraphics[width = 0.8\textwidth]{fig/swmpr_logo.png}}
-\vspace{0.15in}
-\emtxt{SWMPr} is a freely available package for use with R \\~\\
-\begin{itemize}
-\item \emtxt{Retrieve} SWMP data for any site and date combination
-\item \emtxt{Organize} the data using standard pre-processing techniques
-\item \emtxt{Analyze} the data using a suite of exploratory and graphical analysis tools
-\end{itemize}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\href{https://swmprats.net}{SWMPrats.net}: \emtxt{S}ystem-\emtxt{W}ide \emtxt{M}onitoring \emtxt{P}rogram \emtxt{R}esources for the \emtxt{A}nalysis of \emtxt{T}ime \emtxt{S}eries \\~\\
-\centerline{\fbox{\includegraphics[width = 0.75\textwidth]{fig/swmprats_home.png}}}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-Two online applications can help visualize trends \\~\\
-\begin{columns}[t]
-\begin{column}{0.45\textwidth}
-\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_summary}{Summary plots}}}
-\centerline{\fbox{\includegraphics[width = 0.9\textwidth]{fig/swmp_summary.png}}}
-\end{column}
-\begin{column}{0.45\textwidth}
-\centerline{\emtxt{\href{https://beckmw.shinyapps.io/swmp_comp}{Trends map}}}
-\centerline{\fbox{\includegraphics[width = 0.935\textwidth]{fig/swmp_comp.png}}}
-\end{column}
-\end{columns}
-\end{frame}
-
-%%%%%%
-\begin{frame}{\textbf{Case 3: Open-source science}}{\textbf{Analysis tools for water quality data}}
-\onslide<+->
-Tools in the SWMPr package have facilitated comparative analyses of millions of water quality records from NERRS \\~\\
-These tools can help improve our understanding of nutrient pollution and eutrophication \\~\\
-\onslide<+->
-Potential for many other applications... actively being developed \\~\\
-\begin{columns}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/Rlogo.png}}
-\end{column}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/RStudio.png}}
-\end{column}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/knit-logo.png}}
-\end{column}
-\begin{column}{0.25\textwidth}
-\centerline{\includegraphics[width = \textwidth]{fig/octocat.png}}
-\end{column}
-\end{columns}
-\end{frame}
-
 %%%%%%
 \begin{frame}{\textbf{Conclusions}}
 Our ability to \emtxt{share}, \emtxt{reproduce}, and \emtxt{collaborate} is essential \\~\\
-\emtxt{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
-\emtxt{Summaries of SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_summary}{https://beckmw.shinyapps.io/swmp\_summary} \\~\\
-\emtxt{Trends in SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_comp}{https://beckmw.shinyapps.io/swmp\_comp} \\~\\
-\emtxt{This presentation:} \href{https://github.com/fawda123/ncea_pres}{https://github.com/fawda123/ncea\_pres} \\~\\
-\emtxt{Github}: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
-\emtxt{Blog}: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
+% \emtxt{SWMPr package:} \href{https://github.com/fawda123/SWMPr}{https://github.com/fawda123/SWMPr} \\~\\
+% \emtxt{Summaries of SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_summary}{https://beckmw.shinyapps.io/swmp\_summary} \\~\\
+% \emtxt{Trends in SWMP parameters:} \href{https://beckmw.shinyapps.io/swmp_comp}{https://beckmw.shinyapps.io/swmp\_comp} \\~\\
+% \emtxt{This presentation:} \href{https://github.com/fawda123/ncea_pres}{https://github.com/fawda123/ncea\_pres} \\~\\
+% \emtxt{Github}: \href{https://github.com/fawda123/}{github.com/fawda123/} \\~\\
+% \emtxt{Blog}: \href{http://beckmw.wordpress.com/}{beckmw.wordpress.com/}
 \end{frame}
 
 %%%%%%

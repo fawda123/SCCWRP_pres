@@ -1,3 +1,4 @@
+ \newcommand{\noop}[1]{}
 \begin{thebibliography}{}
 
 \bibitem[Beck and {Hagy III}, 2015]{Beck15}
@@ -12,15 +13,23 @@ Beck MW, Hatch LK, Vondracek B, Valley RD. 2010.
   {M}innesota lakes.
 \newblock Ecological Indicators, 10(5):968--979.
 
-\bibitem[Cloern, 2001]{Cloern01}
-Cloern JE. 2001.
-\newblock Our evolving conceptual model of the coastal eutrophication problem.
-\newblock Marine Ecology Progress Series, 210:223--253.
+\bibitem[Beck and Murphy, 2017]{Beck17}
+Beck MW, Murphy RR. 2017.
+\newblock Numerical and qualitative contrasts of two statistical models for
+  water quality change in tidal waters.
+\newblock Journal of the American Water Resources Association, 53(1):197--219.
 
-\bibitem[Garson, 1991]{Garson91}
-Garson GD. 1991.
-\newblock Interpreting neural network connection weights.
-\newblock Artificial Intelligence Expert, 6(4):46--51.
+\bibitem[Beck et~al., 2013]{Beck13}
+Beck MW, Vondracek B, Hatch LK. 2013.
+\newblock Environmental clustering of lakes to evaluate performance of a
+  macrophyte index of biotic integrity.
+\newblock Aquatic Botany, 108:16--25.
+
+\bibitem[Beck et~al., 2014]{Beck14a}
+Beck MW, Wilson BN, Vondracek B, Hatch LK. 2014.
+\newblock Application of neural networks to quantify the utility of indices of
+  biotic integrity for biological monitoring.
+\newblock Ecological Indicators, 45:195--208.
 
 \bibitem[Hirsch et~al., 2010]{Hirsch10}
 Hirsch RM, Moyer DL, Archfield SA. 2010.
@@ -49,12 +58,6 @@ Karr JR, Fausch KD, Angermeier PL, Yant PR, Schlosser IJ. 1986.
 {National Research Council}. 1990.
 \newblock Managing Troubled Waters: The Role of Environmental Monitoring.
 \newblock National Academy Press, Washington, DC.
-
-\bibitem[Nixon, 1995]{Nixon95}
-Nixon SW. 1995.
-\newblock Coastal marine eutrophication: A definition, social causes, and
-  future concerns.
-\newblock Ophelia, 41:199--219.
 
 \bibitem[Suter, 1993]{Suter93}
 Suter GW. 1993.

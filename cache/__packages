@@ -17,3 +17,11 @@ Formula
 Hmisc
 car
 RColorBrewer
+SWMPr
+WRTDStidal
+tidyverse
+tibble
+tidyr
+readr
+purrr
+dplyr
