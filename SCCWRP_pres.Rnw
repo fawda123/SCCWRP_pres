@@ -1315,9 +1315,10 @@ Acknowledgments:\\~\\
 \begin{columns}
 \begin{column}{0.8\textwidth}
 {\footnotesize
+Dissertation committee ad advisors: B. Vondracek, L. Hatch, D. Pereira, S. Weisberg \\~\\
 Research staff and employees at USEPA Gulf Ecology Division - especially J. Hagy, M. Murrell\\~\\
 Field staff and data managers at Hillsborough County Environmental Protection Commission\\~\\
-Research coordinators, technicians, and field staff of the National Estuarine Research Reserve System}\\~\\
+Research staffa dn employees at the San Francisco Estuary Institute}\\~\\
 \end{column}
 \begin{column}{0.2\textwidth}
 \end{column}
