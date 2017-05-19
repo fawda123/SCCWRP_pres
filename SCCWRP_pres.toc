@@ -1,5 +1,5 @@
 \beamer@endinputifotherversion {3.27pt}
 \beamer@sectionintoc {1}{Background}{2}{0}{1}
 \beamer@sectionintoc {2}{Case 1: Minnesota lakes}{7}{0}{2}
-\beamer@sectionintoc {3}{Case 2: Florida Estuaries}{55}{0}{3}
+\beamer@sectionintoc {3}{Case 2: Florida Estuaries}{53}{0}{3}
 \beamer@sectionintoc {4}{References}{86}{0}{4}
